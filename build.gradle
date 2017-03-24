@@ -8,6 +8,16 @@ repositories {
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.23'
     runtime 'ch.qos.logback:logback-classic:1.2.1'
+
+    testCompile 'org.testng:testng:6.1.1'
+}
+
+test {
+    useTestNG()
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams true
+    }
 }
 
 mainClassName = 'com.scrapbook.Scrapbook'
